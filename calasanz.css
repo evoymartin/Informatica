@@ -1,6 +1,14 @@
-h1{
+h1{ /* Selector de etiqueta*/
     color:red;
 }
 h2{
     color:blue;
+}
+.oscuro { 
+    background-color:black;
+    color:white;
+}
+/* Selector ID */
+#biografia {
+    background-color: orange
 }
