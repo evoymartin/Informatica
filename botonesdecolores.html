@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar Colores de Fondo y Texto</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      color: #000;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .boton {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: white;
+    }
+
+    #color1 { background-color: #ff6666; } /* Rojo */
+    #color2 { background-color: #66cc66; } /* Verde */
+    #color3 { background-color: #6666ff; } /* Azul */
+
+    .boton:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cambia el color de fondo y texto</h1>
+
+  <button id="color1" class="boton">Rojo</button>
+  <button id="color2" class="boton">Verde</button>
+  <button id="color3" class="boton">Azul</button>
+
+  <script>
+    // Referencias a los botones
+    const botonRojo = document.getElementById("color1");
+    const botonVerde = document.getElementById("color2");
+    const botonAzul = document.getElementById("color3");
+
+    // Eventos para cambiar el color de fondo y texto
+    botonRojo.addEventListener("click", () => {
+      document.body.style.backgroundColor = "#ff6666";
+      document.body.style.color = "white";
+    });
+
+    botonVerde.addEventListener("click", () => {
+      document.body.style.backgroundColor = "#66cc66";
+      document.body.style.color = "#003300";
+    });
+
+    botonAzul.addEventListener("click", () => {
+      document.body.style.backgroundColor = "#6666ff";
+      document.body.style.color = "white";
+    });
+  </script>
+
+</body>
+</html>
