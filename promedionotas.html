@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de Promedio</title>
+</head>
+<body>
+  <h1>Calcular Promedio de Notas</h1>
+
+  <form id="formNotas">
+    <label>Nota 1:</label><br>
+    <input type="number" id="nota1"><br><br>
+
+    <label>Nota 2:</label><br>
+    <input type="number" id="nota2"><br><br>
+
+    <label>Nota 3:</label><br>
+    <input type="number" id="nota3"><br><br>
+
+    <button type="submit">Calcular Promedio</button>
+  </form>
+
+  <p id="resultado" style="font-weight: bold;"></p>
+
+  <script>
+    const form = document.getElementById('formNotas');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que la página se recargue
+
+      // Obtener valores
+      const n1 = parseFloat(document.getElementById('nota1').value);
+      const n2 = parseFloat(document.getElementById('nota2').value);
+      const n3 = parseFloat(document.getElementById('nota3').value);
+
+      // Calcular promedio
+      const promedio = (n1 + n2 + n3) / 3;
+
+      // Mostrar resultado
+      if (promedio >= 6) {
+        resultado.textContent = `Promedio: ${promedio.toFixed(2)}. ¡Aprobado!`;
+      } else {
+        resultado.textContent = `Promedio: ${promedio.toFixed(2)}. No aprobado.`;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Asistencia - Fiesta de Fin de Año</title>
+</head>
+<body>
+  <h1>Registro de Asistencia</h1>
+  <p>Por favor, completa el formulario para confirmar tu asistencia.</p>
+
+  <form id="asistenciaForm">
+    <label for="nombre">Nombre del estudiante:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="asistencia">¿Asistirá a la fiesta de fin de año?</label><br>
+    <select id="asistencia" name="asistencia" required>
+      <option value="">Seleccione una opción</option>
+      <option value="sí">Sí</option>
+      <option value="no">No</option>
+    </select><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="mensaje" style="color: green; font-weight: bold; display: none;">
+    ¡Gracias! Tu respuesta ha sido registrada.
+  </p>
+
+  <script>
+    // Mostrar mensaje al enviar el formulario sin recargar la página
+    const form = document.getElementById('asistenciaForm');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // evita que la página se recargue
+      mensaje.style.display = 'block'; // muestra el mensaje
+      form.reset(); // limpia los campos
+    });
+  </script>
+</body>
+</html>
